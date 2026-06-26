@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0C4636" />
+<title>أفنان</title>
+<link rel="icon" type="image/png" href="icon-512.png" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=El+Messiri:wght@400..700&family=Tajawal:wght@300;400;500;700;800&family=Amiri&display=swap" />
+<style>
+  :root{
+    --green:#1E6F50; --green-d:#0C4636; --green-m:#2E8B66; --leaf:#7CC09A;
+    --mint:#E4F1E8; --gold:#C9A24B; --gold-soft:#E7D6A8;
+    --ink:#23332B; --ink-soft:#5A655C; --bg:#F4F8F1; --card:#FFFFFF; --line:#E6ECE2;
+    --fHero:"Aref Ruqaa",serif; --fHead:"El Messiri",sans-serif; --fBody:"Tajawal",sans-serif; --fScript:"Amiri",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+  body{font-family:var(--fBody);background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.6;}
+  img{max-width:100%;height:auto;}
+  .wrap{width:100%;max-width:1080px;margin:0 auto;padding:0 clamp(18px,5vw,28px);}
+  a{text-decoration:none;color:inherit;}
+
+  /* ── Hero ── */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(170deg,#1E6F50 0%,#0C4636 100%);color:#fff;
+    padding:clamp(44px,8vw,68px) 0 clamp(64px,11vw,94px);
+    padding-top:max(clamp(44px,8vw,68px),env(safe-area-inset-top));text-align:center;}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(circle at 78% 8%, rgba(168,216,190,.30), transparent 46%),
+               radial-gradient(circle at 12% 92%, rgba(201,162,75,.18), transparent 42%);}
+  .hero .wrap{position:relative;z-index:1;}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;
+    background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);
+    font-family:var(--fBody);font-size:clamp(12px,3.4vw,13.5px);font-weight:600;color:var(--gold-soft);margin-bottom:clamp(18px,4vw,26px);}
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--leaf);box-shadow:0 0 0 4px rgba(124,192,154,.25);}
+  .applogo{width:clamp(92px,22vw,118px);height:clamp(92px,22vw,118px);border-radius:clamp(22px,5vw,28px);
+    box-shadow:0 18px 50px rgba(0,0,0,.32);display:block;margin:0 auto clamp(18px,4vw,26px);border:1px solid rgba(255,255,255,.12);}
+  h1{font-family:var(--fHero);font-weight:700;font-size:clamp(44px,13vw,64px);line-height:1.05;letter-spacing:.5px;margin-bottom:14px;}
+  .tagline{font-family:var(--fHead);font-size:clamp(17px,4.6vw,21px);font-weight:500;color:rgba(255,255,255,.92);max-width:560px;margin:0 auto 10px;}
+  .sub{font-size:clamp(14px,3.9vw,15.5px);color:rgba(255,255,255,.66);max-width:520px;margin:0 auto clamp(26px,6vw,36px);}
+
+  .cta{display:inline-flex;align-items:center;justify-content:center;gap:13px;padding:clamp(15px,4vw,17px) clamp(26px,7vw,34px);border-radius:18px;
+    background:#fff;color:var(--green-d);font-family:var(--fHead);font-size:clamp(16px,4.4vw,18px);font-weight:700;
+    box-shadow:0 14px 34px rgba(0,0,0,.28);transition:transform .18s ease,box-shadow .18s ease;max-width:340px;}
+  .cta:hover{transform:translateY(-3px);box-shadow:0 20px 44px rgba(0,0,0,.34);}
+  .cta:active{transform:translateY(-1px);}
+  .cta svg{width:24px;height:24px;flex-shrink:0;}
+  .cta-note{margin-top:16px;font-size:13px;color:rgba(255,255,255,.6);}
+  .cta-note b{color:rgba(255,255,255,.85);font-weight:700;}
+
+  /* ── curve divider ── */
+  .curve{display:block;width:100%;height:54px;margin-top:-1px;}
+
+  /* ── Features ── */
+  .section{padding:clamp(48px,9vw,74px) 0;}
+  .eyebrow{text-align:center;font-family:var(--fBody);font-size:14px;font-weight:700;letter-spacing:1px;
+    color:var(--green-m);margin-bottom:10px;}
+  .h2{text-align:center;font-family:var(--fHead);font-size:clamp(25px,6.5vw,34px);font-weight:700;color:var(--ink);margin-bottom:clamp(34px,7vw,48px);line-height:1.25;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(14px,3vw,20px);}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:clamp(24px,5vw,30px) clamp(22px,4.5vw,26px);
+    transition:transform .2s ease,box-shadow .2s ease;}
+  .feat:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(30,111,80,.10);}
+  .feat .ic{width:clamp(64px,15vw,76px);height:clamp(64px,15vw,76px);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .feat .ic img{width:100%;height:100%;object-fit:contain;display:block;}
+  .feat h3{font-family:var(--fHead);font-size:clamp(18px,4.8vw,20px);font-weight:700;margin-bottom:8px;color:var(--ink);}
+  .feat p{font-size:clamp(14px,3.8vw,15px);color:var(--ink-soft);}
+  .feat.lead{grid-column:1/-1;background:linear-gradient(140deg,#F0F7F1,#FBFCF8);border-color:#DCEDE2;
+    display:flex;gap:clamp(18px,4vw,24px);align-items:center;flex-wrap:wrap;}
+  .feat.lead .ic{flex-shrink:0;width:clamp(82px,20vw,104px);height:clamp(82px,20vw,104px);}
+  .feat.lead .body{flex:1;min-width:min(100%,240px);}
+  .feat.lead .tenq{font-family:var(--fHero);font-size:clamp(26px,7vw,30px);color:var(--green);line-height:1;margin-top:4px;}
+
+  /* ── Steps ── */
+  .steps{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .steprow{display:flex;gap:18px;align-items:flex-start;max-width:680px;margin:0 auto;padding:16px 0;}
+  .steprow:not(:last-child){border-bottom:1px dashed var(--line);}
+  .num{flex-shrink:0;width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;
+    font-family:var(--fHead);font-weight:700;font-size:19px;display:flex;align-items:center;justify-content:center;}
+  .steprow h4{font-family:var(--fHead);font-size:17.5px;font-weight:700;margin-bottom:3px;}
+  .steprow p{font-size:14.5px;color:var(--ink-soft);}
+
+  /* ── Footer ── */
+  .foot{background:var(--green-d);color:rgba(255,255,255,.7);text-align:center;
+    padding:clamp(40px,8vw,50px) 0 max(clamp(32px,7vw,40px),env(safe-area-inset-bottom));}
+  .foot .name{font-family:var(--fHero);font-size:clamp(30px,7vw,34px);color:#fff;margin-bottom:8px;}
+  .foot .dua{font-family:var(--fScript);font-size:clamp(16px,4.4vw,18px);color:var(--gold-soft);margin:14px 0 22px;}
+  .foot .credit{font-size:13.5px;line-height:2;}
+  .foot .credit b{color:#fff;font-weight:700;}
+  .foot .ios{display:inline-block;margin-top:20px;padding:8px 18px;border-radius:999px;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);font-size:13px;color:rgba(255,255,255,.7);}
+
+  /* ── الأجهزة اللوحية والصغيرة ── */
+  @media(max-width:520px){
+    .feat.lead{flex-direction:column;text-align:center;}
+    .feat.lead .ic{margin:0 auto 4px;}
+    .cta{width:100%;}
+  }
+  @media(max-width:380px){
+    .num{width:38px;height:38px;font-size:17px;}
+    .steprow{gap:14px;}
+  }
+  @media(min-width:1200px){
+    .grid{gap:24px;}
+  }
+  @media(hover:none){
+    .feat:hover{transform:none;box-shadow:none;}
+    .cta:hover{transform:none;box-shadow:0 14px 34px rgba(0,0,0,.28);}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ════ HERO ════ -->
+  <header class="hero">
+    <div class="wrap">
+      <div class="badge"><span class="dot"></span> التجربة الأولى · نسخة أندرويد</div>
+      <img class="applogo" src="icon-512.png" alt="شعار أفنان" />
+      <h1>أفنان</h1>
+      <p class="tagline">رفيقُك اليوميّ إلى القرآن والصلاة والذِّكر</p>
+      <p class="sub">القرآن الكريم بالقراءات العشر، مواقيت الصلاة الدقيقة، اتجاه القبلة، وحصنُ المسلم من الأذكار — في تطبيقٍ واحدٍ هادئ.</p>
+      <a class="cta" href="افنان.apk" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>
+        تحميل التطبيق لأندرويد
+      </a>
+      <p class="cta-note">ملفّ APK · يعمل على أندرويد · <b>مجّانًا</b></p>
+    </div>
+  </header>
+  <svg class="curve" viewBox="0 0 1440 54" preserveAspectRatio="none" fill="#F4F8F1"><path d="M0,54 L0,28 C240,52 480,52 720,34 C960,16 1200,16 1440,30 L1440,54 Z"/></svg>
+
+  <!-- ════ FEATURES ════ -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">ما الذي يقدّمه أفنان</p>
+      <h2 class="h2">كلُّ ما تحتاجه ليومٍ عامرٍ بالطاعة</h2>
+      <div class="grid">
+
+        <div class="feat lead">
+          <div class="ic"><img src="icons/quran.png" alt="" /></div>
+          <div class="body">
+            <h3>القرآن الكريم</h3>
+            <div class="tenq">بالقراءات العشر</div>
+            <p style="margin-top:8px;">مصحفٌ كاملٌ بالخطّ العثمانيّ، تلوينُ أحكام التجويد، تفسيرٌ ميسّر، وحفظٌ تلقائيٌّ لموضعك. القراءات العشر قيد الإتمام بإذن الله.</p>
+          </div>
+        </div>
+
+        <div class="feat">
+          <div class="ic"><img src="icons/prayer-times.png" alt="" /></div>
+          <h3>مواقيت الصلاة</h3>
+          <p>مواقيت دقيقة محسوبة لموقعك تلقائيًّا، مع تنبيه الأذان عند دخول كلّ وقت.</p>
+        </div>
+
+        <div class="feat">
+          <div class="ic"><img src="icons/qibla.png" alt="" /></div>
+          <h3>اتجاه القبلة</h3>
+          <p>بوصلةٌ حيّةٌ تدلّك على القبلة من أيّ مكانٍ في العالم بدقّة.</p>
+        </div>
+
+        <div class="feat">
+          <div class="ic"><img src="icons/adhkar.png" alt="" /></div>
+          <h3>الأذكار والأدعية</h3>
+          <p>أذكار الصباح والمساء، أدعية نبويّة وقرآنيّة، تسابيح، وفضلُ الذكر — مع التذكير بها.</p>
+        </div>
+
+        <div class="feat">
+          <div class="ic"><img src="icons/reminders.png" alt="" /></div>
+          <h3>تذكيراتٌ ذكيّة</h3>
+          <p>تنبيهٌ بسورة الكهف كلَّ جمعة، وبأذكارك بعد الشروق والمغرب، وبوردك القرآنيّ.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ INSTALL STEPS ════ -->
+  <section class="section steps">
+    <div class="wrap">
+      <p class="eyebrow">التثبيت سهل</p>
+      <h2 class="h2">ثلاث خطواتٍ وتبدأ</h2>
+      <div class="steprow">
+        <div class="num">١</div>
+        <div><h4>حمّل الملفّ</h4><p>اضغط زرّ «تحميل التطبيق لأندرويد» في الأعلى لتنزيل ملفّ APK على هاتفك.</p></div>
+      </div>
+      <div class="steprow">
+        <div class="num">٢</div>
+        <div><h4>اسمح بالتثبيت</h4><p>افتح الملفّ، وإن طلب هاتفك السماح بـ«التثبيت من مصادر غير معروفة» فعّله — مرّةً واحدة.</p></div>
+      </div>
+      <div class="steprow">
+        <div class="num">٣</div>
+        <div><h4>اقبل الأذونات</h4><p>افتح أفنان، اقبل إذن الموقع والإشعارات، وابدأ رحلتك اليوميّة مع القرآن والصلاة.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="foot">
+    <div class="wrap">
+      <div class="name">أفنان</div>
+      <div class="credit">برمجة وتصميم: <b>ميسرة العيساوي</b></div>
+      <div class="dua">اللهمَّ اجعلْهُ حُجّةً لنا لا علينا يا ربّ</div>
+      <div class="ios">نسخة iOS قيد العمل</div>
+    </div>
+  </footer>
+
+</body>
+</html>
